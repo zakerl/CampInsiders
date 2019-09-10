@@ -1,0 +1,33 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#delete-form {
+    display: inline;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.navbar-default {
+    border: 0
+}
+.thumbnail {
+    padding: 0;
+    background-color: transparent;
+}
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CampInsiders</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    </head>
+    <body style="background-image: url(/Images/backgroundimage.jpg)">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+                <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/">CampInsiders</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/campgrounds">Home</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <% if(!currentUser){ %>
+                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="/register">Sign Up</a></li>
+                                <% } else { %>
+                                    <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                                    <li><a href="/logout">Logout</a></li>
+                                <% } %>
+                            </ul>
+                            <form class="navbar-form navbar-left" action="/results" method="GET">
+                                <div class="form-group">
+                                  <input type="text" name="search" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                
+                <div class="container">
+                    
+                    <% if(error && error.length > 0){ %>
+                        <div class="alert alert-danger" role="alert" style="margin-top: 50px">
+                            <%= error %>
+                        </div>
+                    <% } %>
+                    <% if(success && success.length > 0){ %>
+                        <div class="alert alert-success" role="alert" style="margin-top: 50px">
+                            <%= success %>
+                        </div>
+                    <% } %>
+                </div>
+        </div>
+        
+    
